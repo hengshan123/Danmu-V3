@@ -239,7 +239,10 @@ namespace DanmakuChi {
                 ws.Send(json);
                 CancelDMK();
             }
-            
+            //btnQRCode_Click();
+            //QRCode qrcode = new QRCode(textWechat.Text + qrCodeUrl + ":" + textChannel.Text, qrCodeUrl, "Channel QRCode");
+            //qrcode.Show();
+
         }
         private void CancelDMK() {
             ws.Close(); // 调用websocket结束
@@ -312,10 +315,18 @@ namespace DanmakuChi {
                         string[] emoijs = msg.Split(']');
                         for (int i = 0; i < emoijs.Length - 1; ++i)
                         {
+                            try
+                            {
                                 string tmp = "";
                                 emoji_map.TryGetValue(emoijs[i] + "]", out tmp);//传进去"[鬼脸]"等emoji代码
                                 string path = "../emoji/" + tmp;
                                 ShootDanmaku(path, 1);
+                                Thread.Sleep(40);
+                            }
+                            catch
+                            {
+                                Console.WriteLine("emoj error");
+                            } 
                         }
                             //
 

@@ -35,9 +35,27 @@ namespace DanmakuChi {
     public class ShadowDanmaku : TextBlock {
         //TODO: Optimizing the performance of danmaku animation with shadow.
         public ShadowDanmaku(string text) {
-            FontSize = 66;
+            Random rd = new Random();
+            FontSize = rd.Next(40,100);
             Text = text;
-            Foreground = Brushes.Red;
+
+            int color_index = rd.Next(1, 4);
+            switch (color_index)
+            {
+                case 1:
+                    Foreground = Brushes.Red;
+                    break;
+                case 2:
+                    Foreground = Brushes.Yellow;
+                    break;
+                case 3:
+                    Foreground = Brushes.YellowGreen;
+                    break;
+                case 4:
+                    Foreground = Brushes.Pink;
+                    break;
+            }
+            //Foreground = Brushes.Red;
 
             Effect = new DropShadowEffect {
                 Color = Colors.Black,
@@ -64,8 +82,15 @@ namespace DanmakuChi {
             ImageSource img = new BitmapImage(new Uri(path, UriKind.RelativeOrAbsolute));
             Background = new ImageBrush(img);
             //自适应图片大小
-            Height = img.Height;
-            Width = img.Width;
+            try
+            {
+                Height = img.Height*2;
+                Width = img.Width*2;
+            }
+            catch
+            {
+                Console.WriteLine("emoj picture error!");
+            }
             Effect = new DropShadowEffect
             {
                 Color = Colors.Black,

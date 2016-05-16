@@ -7,7 +7,7 @@
         ResizeMode="NoResize"
         mc:Ignorable="d"
         WindowStyle="SingleBorderWindow"
-        Title="QRCode" Width="460" Height="550">
+        Title="扫码进房间" Width="460" Height="550">
     <Window.Background>
         <SolidColorBrush Opacity="0.8" Color="White"/>
     </Window.Background>
