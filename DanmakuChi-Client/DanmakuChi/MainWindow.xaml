@@ -6,29 +6,36 @@
         xmlns:local="clr-namespace:DanmakuChi"
         xmlns:chrome="http://schemes.grabacr.net/winfx/2014/chrome"
         mc:Ignorable="d"
-        Title="让发声更有趣！" Height="397.496" Width="723.173" Closed="Window_Closed" Background="Black">
+        Title="让发声更有趣！" Height="397.496" Width="505.173" Closed="Window_Closed" Background="Black">
 
-    <Grid RenderTransformOrigin="0.446,0.486" Background="#FF7CA64A" Height="373" VerticalAlignment="Top" Margin="0,0,-8,-6">
+    <Grid RenderTransformOrigin="0.446,0.486" Background="#4ab1eb"  Opacity="1" Height="373" VerticalAlignment="Top" Margin="0,0,2,-6" OpacityMask="Black">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-        </Grid.ColumnDefinitions>
+      
         <ListBox x:Name="listLog" 
                  Margin="10,449,0,33" Grid.Column="1" Visibility="Hidden"/>
-        <GroupBox x:Name="groupBox" Header="创建房间" HorizontalAlignment="Left" Margin="248,130,0,0" VerticalAlignment="Top" Height="176" Width="267" Grid.Column="1">
+        <GroupBox x:Name="groupBox" Header="创建房间" HorizontalAlignment="Left" Margin="120,125,0,0" VerticalAlignment="Top" Height="176" Width="267" Grid.Column="1" Foreground="#FFF5E6E6" FontSize="16">
             <Grid RenderTransformOrigin="0.5,0.268">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="63*"/>
-                    <ColumnDefinition Width="38*"/>
+                    <ColumnDefinition Width="37*"/>
+                    <ColumnDefinition Width="122*"/>
+                    <ColumnDefinition Width="46*"/>
+                    <ColumnDefinition Width="50*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btnConnect" Content="创建房间" HorizontalAlignment="Left" Margin="36,93,0,0" VerticalAlignment="Top" Width="81" Click="button_Click" Height="24"/>
-                <Button x:Name="btnQRCode" Content="生成二维码" HorizontalAlignment="Right" VerticalAlignment="Top" Width="77" Height="26" Click="btnQRCode_Click" Margin="0,92,40,0" Grid.ColumnSpan="2"/>
-                <Label x:Name="labelServer" Content="Server" HorizontalAlignment="Left" Margin="8,15,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-                <TextBox x:Name="textServer" HorizontalAlignment="Left" Height="25" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" VerticalContentAlignment="Center" Visibility="Hidden" Grid.ColumnSpan="2"/>
-                <Label x:Name="labelChannel" Content="房间名称" HorizontalAlignment="Left" Margin="78,10,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="textChannel" HorizontalAlignment="Left" Height="25" Margin="36,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                <Button x:Name="btnConnect" Content="创建房间" Margin="25,89,37,0" VerticalAlignment="Top" Click="button_Click" Height="35" Grid.ColumnSpan="2" Foreground="#FF142170">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF3F3F3" Offset="0.022"/>
+                            <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                            <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                            <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnQRCode" Content="生成二维码" HorizontalAlignment="Right" VerticalAlignment="Top" Width="107" Height="35" Click="btnQRCode_Click" Margin="0,88,23,0" Grid.ColumnSpan="3" Grid.Column="1" Foreground="#FF142170"/>
+                <Label x:Name="labelServer" Content="Server" HorizontalAlignment="Left" Margin="8,15,0,0" VerticalAlignment="Top" Visibility="Hidden" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="textChannel" HorizontalAlignment="Left" Height="42" Margin="25,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" VerticalContentAlignment="Center"  Grid.ColumnSpan="4"/>
+                <Label x:Name="labelChannel" Content="房间名称" HorizontalAlignment="Left" Margin="55,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.707,0.538" Visibility="Hidden" Grid.Column="1"/>
+                <TextBox x:Name="textServer" HorizontalAlignment="Left" Height="25" Margin="36,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" VerticalContentAlignment="Center"  Visibility="Hidden" Grid.ColumnSpan="4"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox_Copy" Header="字体设置" HorizontalAlignment="Left" Margin="19,211,-267,0" VerticalAlignment="Top" Height="225" Width="248" Grid.Column="2" Visibility="Hidden">
@@ -57,9 +64,10 @@
 
             </Grid>
         </GroupBox>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="264,19,0,0" TextWrapping="Wrap" Text="爱吐槽" VerticalAlignment="Top" FontSize="48" Grid.Column="1" Height="89" Width="214" 
-                   TextAlignment="Center" FontFamily="Microsoft YaHei"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="141,19,0,0" TextWrapping="Wrap" Text="爱吐槽" VerticalAlignment="Top" FontSize="48" Grid.Column="1" Height="89" Width="214" 
+                   TextAlignment="Center" FontFamily="Microsoft YaHei" Visibility="Hidden"/>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,426,0,0" TextWrapping="Wrap" Text="推送日志" VerticalAlignment="Top" FontSize="14" Grid.Column="1" Width="160" Height="18" Visibility="Hidden"/>
+        <Image x:Name="image" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="100" Source="logo.jpg" Margin="201,10,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

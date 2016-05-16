@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DanmakuChi"
         mc:Ignorable="d"
-        Title="DanmakuCurtain"
+        Title="弹幕"
         WindowStyle="None"
         Topmost="True"
         AllowsTransparency="True"

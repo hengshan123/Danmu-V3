@@ -55,7 +55,8 @@ namespace DanmakuChi {
         public MainWindow() {
             try {
                 InitializeComponent();
-
+               // ImageSource img = new BitmapImage(new Uri(@"logo.jpg", UriKind.RelativeOrAbsolute));
+               // image.Source = img;
                 emoji_map = new Dictionary<string, string>();
                 var con_moj = File.ReadAllText("../emoji_conf");
                 var input_moj = new StringReader(con_moj);
@@ -320,8 +321,9 @@ namespace DanmakuChi {
                                 string tmp = "";
                                 emoji_map.TryGetValue(emoijs[i] + "]", out tmp);//传进去"[鬼脸]"等emoji代码
                                 string path = "../emoji/" + tmp;
+                                Thread.Sleep(20);
                                 ShootDanmaku(path, 1);
-                                Thread.Sleep(40);
+                                
                             }
                             catch
                             {
