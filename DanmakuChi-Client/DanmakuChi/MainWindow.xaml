@@ -9,8 +9,6 @@
         Title="让发声更有趣！" Height="397.496" Width="505.173" Closed="Window_Closed" Background="Black">
 
     <Grid RenderTransformOrigin="0.446,0.486" Background="#4ab1eb"  Opacity="1" Height="373" VerticalAlignment="Top" Margin="0,0,2,-6" OpacityMask="Black">
-
-      
         <ListBox x:Name="listLog" 
                  Margin="10,449,0,33" Grid.Column="1" Visibility="Hidden"/>
         <GroupBox x:Name="groupBox" Header="创建房间" HorizontalAlignment="Left" Margin="120,125,0,0" VerticalAlignment="Top" Height="176" Width="267" Grid.Column="1" Foreground="#FFF5E6E6" FontSize="16">
@@ -67,7 +65,7 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="141,19,0,0" TextWrapping="Wrap" Text="爱吐槽" VerticalAlignment="Top" FontSize="48" Grid.Column="1" Height="89" Width="214" 
                    TextAlignment="Center" FontFamily="Microsoft YaHei" Visibility="Hidden"/>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,426,0,0" TextWrapping="Wrap" Text="推送日志" VerticalAlignment="Top" FontSize="14" Grid.Column="1" Width="160" Height="18" Visibility="Hidden"/>
-        <Image x:Name="image" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="100" Source="logo.jpg" Margin="201,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="label" Content="爱吐槽" HorizontalAlignment="Left" Margin="176,35,0,0" VerticalAlignment="Top" Height="73" Width="179" FontSize="48" Foreground="#FFF3EFEF" FontFamily="Microsoft JhengHei"/>
 
     </Grid>
 </Window>
